@@ -7,9 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-first-app';
-  myfun(){
-    var num1 = ((document.getElementById("placeId") as HTMLInputElement).value);
-    console.log(num1);
-  }
 }
 
