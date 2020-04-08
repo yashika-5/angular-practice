@@ -1,0 +1,75 @@
+<p>tmp-driven-form works!</p>
+<form #f= "ngForm" (ngSubmit) = "submit(f)">
+<div ngModelGroup="person"> 
+    <label>FirstName</label> 
+    <br>
+<input type="text" id="name1" ngModel 
+            name="firstName"
+            minlength="2"
+            maxlength="5"
+            #firstName = "ngModel"
+            (change)="doSomething(firstName)"
+     required>
+
+  
+ <input type="text" id="name2" ngModel 
+           name="lastName" 
+           #lastName="ngModel"
+           (change)="doAnotherthing(lastName)" placeholder="lastname"
+     required>
+     <br>
+     <label id="lab1">Select whom do you love the most ?</label>
+     <br>
+
+
+<select ngModel name="pers" id="drop1">
+    <option *ngFor="let myOption of myOptions" [value] = "myOption.id" required>{{myOption.name}}</option>
+</select>
+<br>
+
+
+<label>
+    <input type="checkbox" ngModel name="like"  id="lab1" required> Do you wanna rate it ?
+</label>
+<br>
+
+
+<label *ngFor="let myOption of myOptions1">
+    <input type="radio" ngModel name="clap" [value]="myOption.id" required> 
+    {{ myOption.name }}
+</label>
+<br>
+<button [disabled]="!f.valid">Submit</button>
+
+     <div *ngIf = "firstName.touched && !firstName.valid">
+        <div *ngIf="firstName.errors.required">
+            Firstname is required
+        </div>
+          <div *ngIf="firstName.errors.minlength">
+            Firstname minimum length is
+            {{ firstName.errors.minlength.requiredLength }}
+          </div>
+          <div *ngIf="firstName.errors.maxlength">
+            Firstname maximum length is
+            {{ firstName.errors.maxlength.requiredLength }}
+          </div>
+    </div>
+    <div *ngIf = "lastName.touched && !lastName.valid">
+        <div *ngIf="lastName.errors.required">
+            lastName is required
+        </div>
+          <div *ngIf="lastName.errors.minlength">
+            lastName minimum length is
+            {{lastName.errors.minlength.requiredLength }}
+          </div>
+          <div *ngIf="lastName.errors.maxlength">
+            lastName maximum length is
+            {{ lastName.errors.maxlength.requiredLength }}
+          </div>
+    </div>
+
+    
+</div>
+
+
+ </form>

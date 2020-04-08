@@ -6,17 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-component.component.css']
 })
 export class LoginComponentComponent implements OnInit {
-  isLoggedIn = false;
-  name;
+  
+   names;
   constructor() { }
 
   ngOnInit(): void {
+   
   }
   myfun(vohElement) {
-    if (vohElement.value) {
-      this.isLoggedIn = true;
-      this.name = vohElement.value;
-      console.log(vohElement.value);
+    if (vohElement.value) {    
+      this.names = vohElement.value;
     }
   }
 }

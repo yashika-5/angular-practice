@@ -1,5 +1,5 @@
-<form *ngIf="!name">
+<form *ngIf="!names">
    <input type="text"  id="placeId" #valuehaha placeholder="username"><br><br>
    <button type="button" (click) = "myfun(valuehaha)"  class="btn btn-primary">Submit</button>
 </form>
-<p *ngIf="name" >Welcome {{name}}</p>
+<p *ngIf="names" >Welcome {{names}}</p>
