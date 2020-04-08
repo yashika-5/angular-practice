@@ -14,6 +14,7 @@ export class TmpDrivenFormComponent implements OnInit {
   formSubmitted = false;
   marked : boolean;
   count = 0;
+
   myOptions = [
     { id:1 , name: "Yashika"},
     { id:2 , name: "Prasang"}
@@ -25,9 +26,7 @@ export class TmpDrivenFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  counter() {
-    this.count++;
-  }
+ 
   doSomething(fName){
       this.firstName = fName.value;
       console.log(fName.value);

@@ -1,38 +1,38 @@
 <p>tmp-driven-form works!</p>
 <form #f= "ngForm" (ngSubmit) = "submit(f)">
 <div ngModelGroup="person">
-<label>FirstName</label>
+
 <p>
 <input type="text" id="name1" ngModel
             name="firstName"
             minlength="2"
             maxlength="5"
             #firstName = "ngModel"
-            (change)="doSomething(firstName)"
+            (change)="doSomething(firstName)" placeholder="firstname"
      required>
-    </p>
-  <p>
+</p>
+
+<p>
  <input type="text" id="name2" ngModel
            name="lastName"
+           minlength="2"
+           maxlength="5"
            #lastName="ngModel"
            (change)="doAnotherthing(lastName)" placeholder="lastname"
      required>
-    </p>
-     <label id="lab1">Select whom do you love the most ?</label>
+     </p>
+    
+ <label id="lab1">Select whom do you love the most ?</label>
 
-
-    <p>
-        {{count}}
-<select ngModel name="pers" id="drop1" (click)="counter()" >
+ <p>       
+<select ngModel name="pers" id="drop1" placeholder="select name" >
     <option *ngFor="let myOption of myOptions" [value] = "myOption.id" required>{{myOption.name}}</option>
-</select></p>
-
-
+</select>
+</p>
 
 <p>
     <input type="checkbox" ngModel name="like"  id="lab1" required> Do you wanna rate it ?
 </p>
-
 
 
 <div *ngFor="let myOption of myOptions1">
