@@ -6,28 +6,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tmp-driven-form.component.css']
 })
 export class TmpDrivenFormComponent implements OnInit {
+  constructor() { }
 
   firstName;
   lastName;
   f;
   formSubmitted = false;
   marked : boolean;
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-  myOptions = [   
+  count = 0;
+  myOptions = [
     { id:1 , name: "Yashika"},
     { id:2 , name: "Prasang"}
   ];
-  myOptions1 = [   
+  myOptions1 = [
     { id:1 , name: "Male"},
     { id:2 , name: "Female"}
   ];
 
+  ngOnInit(): void {
+  }
+  counter() {
+    this.count++;
+  }
   doSomething(fName){
       this.firstName = fName.value;
-     console.log(fName.value);
+      console.log(fName.value);
   }
   doAnotherthing(lName){
     this.lastName = lName.value;
@@ -36,5 +39,5 @@ export class TmpDrivenFormComponent implements OnInit {
   submit(fun){
     this.formSubmitted = true;
   }
-  
+
 }

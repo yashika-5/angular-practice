@@ -1,43 +1,44 @@
 <p>tmp-driven-form works!</p>
 <form #f= "ngForm" (ngSubmit) = "submit(f)">
-<div ngModelGroup="person"> 
-    <label>FirstName</label> 
-    <br>
-<input type="text" id="name1" ngModel 
+<div ngModelGroup="person">
+<label>FirstName</label>
+<p>
+<input type="text" id="name1" ngModel
             name="firstName"
             minlength="2"
             maxlength="5"
             #firstName = "ngModel"
             (change)="doSomething(firstName)"
      required>
-
-  
- <input type="text" id="name2" ngModel 
-           name="lastName" 
+    </p>
+  <p>
+ <input type="text" id="name2" ngModel
+           name="lastName"
            #lastName="ngModel"
            (change)="doAnotherthing(lastName)" placeholder="lastname"
      required>
-     <br>
+    </p>
      <label id="lab1">Select whom do you love the most ?</label>
-     <br>
 
 
-<select ngModel name="pers" id="drop1">
+    <p>
+        {{count}}
+<select ngModel name="pers" id="drop1" (click)="counter()" >
     <option *ngFor="let myOption of myOptions" [value] = "myOption.id" required>{{myOption.name}}</option>
-</select>
-<br>
+</select></p>
 
 
-<label>
+
+<p>
     <input type="checkbox" ngModel name="like"  id="lab1" required> Do you wanna rate it ?
-</label>
-<br>
+</p>
 
 
-<label *ngFor="let myOption of myOptions1">
-    <input type="radio" ngModel name="clap" [value]="myOption.id" required> 
+
+<div *ngFor="let myOption of myOptions1">
+    <input type="radio" ngModel name="clap" [value]="myOption.id" required>
     {{ myOption.name }}
-</label>
+</div>
 <br>
 <button [disabled]="!f.valid">Submit</button>
 
@@ -68,7 +69,7 @@
           </div>
     </div>
 
-    
+
 </div>
 
 
