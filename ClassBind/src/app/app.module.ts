@@ -6,19 +6,26 @@ import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { Test1Component } from './test1/test1.component';
 import { from } from 'rxjs';
+import { ConditionCompComponent } from './condition-comp/condition-comp.component';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { EmployeeService } from './employee.service' ;
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    Test1Component
+    Test1Component,
+    ConditionCompComponent,
+    EmployeeListComponent,
+    EmployeeDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
