@@ -1,0 +1,54 @@
+<div class="col-lg-6">
+    <form [formGroup]="newForm">
+        <h2>New Employee</h2>
+        <div class="form-group form-row">
+            <label for="empId" class="col-md-3 col-form-label">Employee ID:</label>
+            <div class="col-md-9">
+                <input type="text" class="form-control" placeholder="Employee ID" name="empId" formControlName="EmpId">
+            </div>
+        </div>
+
+      
+        <div class="form-group form-row">
+            <label for="empName" class="col-md-3 col-form-label">Employee Name:</label>
+            <div class="col-md-9">
+                <input type="text" class="form-control" placeholder="Employee Name" name="empName" formControlName="EmpName">
+            </div>
+        </div>
+
+        <div class="form-group form-row">
+            <label for="deptName" class="col-md-3 col-form-label">Department Name:</label>
+            <div class="col-md-9">
+                <input type="text" class="form-control" placeholder="Department Name" name="deptName" formControlName="DeptName">
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <button (click)="onAddClick()" class="btn btn-success">ADD  Employee</button>
+        </div>
+        <div class="col-md-3">
+            <button (click)="onRemoveClick()" class="btn btn-success">DELETE Employee</button>
+        </div>
+
+</form>
+</div>
+<div class="col-lg-6">
+    <table class="table">
+        <thead>
+          <tr class="table-dark text-dark">
+            <th>Emp ID</th>
+            <th>Emp Name</th>
+            <th>depart.Name</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let emp of employees">
+            <td>{{emp.empId}}</td>
+            <td>{{emp.empName}}</td>
+            <td>{{emp.deptName}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+</div>
