@@ -10,7 +10,10 @@ export class WebApiFetchService {
 
   constructor(private httpClient: HttpClient) {  
    }
-
+   isLoggedIn = false;
+   isAdmin = false;
+   employee={};
+  dep={}
    apiPrefix: string = "http://localhost:53838";
    getEmployees(): Observable<Employee[]>{
      return this.httpClient.get<Employee[]>(this.apiPrefix + "/api/employee");

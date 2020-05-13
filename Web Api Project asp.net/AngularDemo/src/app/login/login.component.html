@@ -1,0 +1,31 @@
+
+<div *ngIf="!isUserLoggedIn">
+    <nav class="navbar navbar-inverse bg-primary">
+      <div class="container">
+        <ul class="nav navbar-nav" routerLinkActive="active">
+          
+          <li>
+            <a routerLink="/login" routerLinkActive="active">Login</a>
+          </li>
+          
+        </ul>
+      </div>
+    </nav>
+  </div>
+<form class="container" [formGroup] = "uaForm" (ngSubmit)="onSubmit()"> 
+    <!-- div for user name -->
+    <div class="form-group form-row">
+        <label for="userName">User Name:</label>
+        <input class="form-control" type="text" name="userName" formControlName="UserName">
+        <span class="text-danger" *ngIf="!uaForm.controls['UserName'].valid && uaForm.controls['UserName'].errors?.required">Enter valid username.</span>
+        <span class="text-danger" *ngIf="uaForm.controls['UserName'].errors?.required && uaForm.controls['UserName'].touched">Username is required.</span>  
+    </div>
+    <!-- div for password -->
+    <div class="form-group form-row">
+        <label for="password">Password:</label>
+        <input class="form-control" type="password" name="password" formControlName="Password">
+        <span class="text-danger" *ngIf="!uaForm.controls['Password'].valid && uaForm.controls['Password'].errors?.required">enter valid password.</span>
+        <span class="text-danger" *ngIf="uaForm.controls['Password'].errors?.required && uaForm.controls['Password'].touched">Password is required.</span>     
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
