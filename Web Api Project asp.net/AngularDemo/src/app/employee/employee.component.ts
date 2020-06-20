@@ -19,8 +19,16 @@ export class EmployeeComponent implements OnInit {
  id : number;
   ngOnInit(): void {
     this.initialseForm();
+   
     this.getEmployees();
      this.id = this.newForm.value.EmpId;
+  }
+  onSelect(event){
+    if(event.target.files.length > 0){
+      const file = event.target.files[0];
+      this.newForm.get('image').setValue(file);
+     
+    }
   }
 
   initialseForm(){
@@ -28,6 +36,7 @@ export class EmployeeComponent implements OnInit {
         EmpId : new FormControl(),
         EmpName : new FormControl(),
         DeptName : new FormControl(),
+        Img : new FormControl()
 
     });  
   }
@@ -40,12 +49,12 @@ export class EmployeeComponent implements OnInit {
       });
     }); 
   }    
-  onAddClick(){
+ onAddClick(){
     if(this.newForm.valid == true){
 
       // create emp object from the value of form
       console.log(this.newForm.value.EmpId);
-      var emp = new Employee(this.newForm.value.EmpId,this.newForm.value.EmpName,this.newForm.value.DeptName);
+      var emp = new Employee(this.newForm.value.EmpId,this.newForm.value.EmpName,this.newForm.value.DeptName,this.newForm.value.image);
       this.empService.postEmployees(emp).subscribe(
       (response) => {
         console.log(response);
@@ -55,6 +64,7 @@ export class EmployeeComponent implements OnInit {
       this.newForm.reset();
     }
   }
+  /*
   onRemoveClick(){
     if(confirm("Do you want to delete it ?") == true){
     this.id = this.newForm.value.EmpId;
@@ -68,6 +78,6 @@ export class EmployeeComponent implements OnInit {
     this.newForm.reset();
   }
 }
-  
+  */
 
 }

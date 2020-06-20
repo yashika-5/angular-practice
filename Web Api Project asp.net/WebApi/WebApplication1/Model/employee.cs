@@ -17,5 +17,6 @@ namespace WebApplication1.Model
         public int empId { get; set; }
         public string empName { get; set; }
         public string deptName { get; set; }
+        public string img { get; set; }
     }
 }

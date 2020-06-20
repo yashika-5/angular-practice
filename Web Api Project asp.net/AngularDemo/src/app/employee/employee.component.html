@@ -1,4 +1,4 @@
-<div class="col-lg-6">
+<div class="col-lg-9">
     <form [formGroup]="newForm">
         <h2>New Employee</h2>
         <div class="form-group form-row">
@@ -22,23 +22,29 @@
                 <input type="text" class="form-control" placeholder="Department Name" name="deptName" formControlName="DeptName">
             </div>
         </div>
-
+        <div class="form-group form-row">
+            <input type="file" name="image" (change)="onSelect($event)" formControlName="Img">
+        </div>
+        
         <div class="col-md-9">
             <button (click)="onAddClick()" class="btn btn-success">ADD  Employee</button>
         </div>
-        <div class="col-md-3">
+       <!-- <div class="col-md-3">
             <button (click)="onRemoveClick()" class="btn btn-success">DELETE Employee</button>
-        </div>
+        </div>-->
 
 </form>
 </div>
-<div class="col-lg-6">
+
+
+<div class="col-lg-3">
     <table class="table">
         <thead>
           <tr class="table-dark text-dark">
             <th>Emp ID</th>
             <th>Emp Name</th>
             <th>depart.Name</th>
+            <th>image</th>
           </tr>
         </thead>
 
@@ -47,6 +53,7 @@
             <td>{{emp.empId}}</td>
             <td>{{emp.empName}}</td>
             <td>{{emp.deptName}}</td>
+            
           </tr>
         </tbody>
       </table>

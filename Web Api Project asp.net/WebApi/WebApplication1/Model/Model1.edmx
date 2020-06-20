@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LSJPR1_NET34Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LSJPR1_NET34Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="department">
           <Key>
             <PropertyRef Name="deptId" />
@@ -19,13 +19,13 @@
           <Property Name="empId" Type="int" Nullable="false" />
           <Property Name="empName" Type="varchar" MaxLength="20" />
           <Property Name="deptName" Type="varchar" MaxLength="30" />
+          <Property Name="img" Type="varchar" MaxLength="40" />
         </EntityType>
         <EntityContainer Name="LSJPR1_NET34ModelStoreContainer">
           <EntitySet Name="department" EntityType="Self.department" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LSJPR1_NET34Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -43,6 +43,7 @@
           <Property Name="empId" Type="Int32" Nullable="false" />
           <Property Name="empName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="deptName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="img" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="LSJPR1_NET34Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="departments" EntityType="Self.department" />
@@ -65,6 +66,7 @@
           <EntitySetMapping Name="employees">
             <EntityTypeMapping TypeName="LSJPR1_NET34Model.employee">
               <MappingFragment StoreEntitySet="employee">
+                <ScalarProperty Name="img" ColumnName="img" />
                 <ScalarProperty Name="empId" ColumnName="empId" />
                 <ScalarProperty Name="empName" ColumnName="empName" />
                 <ScalarProperty Name="deptName" ColumnName="deptName" />

@@ -21,7 +21,7 @@ namespace WebApplication1.Controllers
 
             return emps;
         }
-        public employee Post(employee emp)
+      /*  public employee Post(employee emp)
         {
             if (ModelState.IsValid)
             {
@@ -63,6 +63,6 @@ namespace WebApplication1.Controllers
             }
 
 
-        }
+        }*/
     }
 }

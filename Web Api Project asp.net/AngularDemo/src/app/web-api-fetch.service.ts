@@ -22,7 +22,8 @@ export class WebApiFetchService {
    postEmployees(emp : Employee): Observable<Employee[]>{
     return this.httpClient.post<Employee[]>(this.apiPrefix + "/api/employee",emp);
   }
+  /*
   deleteEmployees(empid : number){
     return this.httpClient.delete(this.apiPrefix + "/api/employee?empId=" +empid,{responseType : "text"});
-  }
+  }*/
 }

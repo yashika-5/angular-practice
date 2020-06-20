@@ -12,6 +12,7 @@
     <EntitySetMapping Name="employees">
       <EntityTypeMapping TypeName="LSJPR1_NET34Model.employee">
         <MappingFragment StoreEntitySet="employee">
+          <ScalarProperty Name="img" ColumnName="img" />
           <ScalarProperty Name="empId" ColumnName="empId" />
           <ScalarProperty Name="empName" ColumnName="empName" />
           <ScalarProperty Name="deptName" ColumnName="deptName" />

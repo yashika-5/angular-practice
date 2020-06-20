@@ -4,14 +4,15 @@ go
 create table employee(
 empId int primary key,
 empName varchar(20),
-deptName varchar(30)
+deptName varchar(30),
+img varchar(40)
 )
 
-insert into employee values(101,'Yashika','Cyber Security')
-insert into employee values(102,'Prasang','Web Development')
-insert into employee values(103,'Arushi','Java Developer')
-insert into employee values(104,'Ram','Learning')
-insert into employee values(105,'Sahil','Python')
+insert into employee values(101,'Yashika','Cyber Security','shoes.jfif')
+insert into employee values(102,'Prasang','Web Development','comp.jfif')
+insert into employee values(103,'Arushi','Java Developer','Desktop.jfif')
+insert into employee values(104,'Ram','Learning','Computer.jfif')
+
 
 
 
