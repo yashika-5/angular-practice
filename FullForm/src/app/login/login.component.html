@@ -1,0 +1,22 @@
+<div class="main">
+    
+<div class="container">
+    <h1 class="hStyle">LOGIN</h1>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+       
+        <p>
+        <input type="text"  class="boxWidth" formControlName="userName"  placeholder="Username" required>
+        </p>
+        <span *ngIf="profileForm.get('userName').hasError('required') && !isempty"  style="color: red;">username is required</span>
+    <p>
+        <input type="password" class="boxWidth" formControlName="password" placeholder="Password" required>
+    </p>
+    <span *ngIf="profileForm.get('password').hasError('required') && !isempty"  style="color: red;">Enter password</span>
+
+    <br>
+    <p>
+        <button type="submit"  [disabled]="!profileForm.valid" class="buttonWidth">Submit</button>
+    </p>
+    </form>
+</div>
+</div>
